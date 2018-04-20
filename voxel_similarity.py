@@ -3,12 +3,12 @@ import math
 r = 10
 
 def create_empty_voxel():
-    z = lambda: {i : False for i in range(-r, r + 1)}
-    y = lambda: {i : z() for i in range(-r, r + 1)}
-    return {i : y() for i in range(-r, r + 1)}
+    z = lambda: {i : False for i in range(0, 10)}
+    y = lambda: {i : z() for i in range(0, 10)}
+    return {i : y() for i in range(0, 10)}
 
 
-def load_voxel(filename):
+def load_from_goxel(filename):
     with open(filename, 'r') as file:
         data = file.read().split('\n')[3:]
         for i, l in enumerate(data):
@@ -27,10 +27,10 @@ def load_voxel(filename):
     return v
 
 
-reference = load_voxel('1.txt')
-subject = load_voxel('2.txt')
+reference = load_from_goxel('./voxel_spaces/10.txt')
+subject = load_from_goxel('./voxel_spaces/not10.txt')
 
-max_voxels = math.pow(len(range(-r, r + 1)), 3)
+max_voxels = math.pow(len(range(0, r)), 3)
 diff = 0
 
 for x, a in subject.items():
