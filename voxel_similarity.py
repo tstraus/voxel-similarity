@@ -27,8 +27,8 @@ def load_from_goxel(filename):
     return v
 
 
-reference = load_from_goxel('./voxel_spaces/10.txt')
-subject = load_from_goxel('./voxel_spaces/not10.txt')
+reference = load_from_goxel('./voxel_spaces/goxel/10.txt')
+subject = load_from_goxel('./voxel_spaces/goxel/not10.txt')
 
 max_voxels = math.pow(len(range(0, r)), 3)
 diff = 0
