@@ -3,9 +3,9 @@ import math
 r = 10
 
 def create_empty_voxel():
-    z = lambda: {i : False for i in range(0, 10)}
-    y = lambda: {i : z() for i in range(0, 10)}
-    return {i : y() for i in range(0, 10)}
+    z = lambda: {i : False for i in range(0, r)}
+    y = lambda: {i : z() for i in range(0, r)}
+    return {i : y() for i in range(0, r)}
 
 
 def load_from_goxel(filename):
